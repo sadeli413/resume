@@ -1,6 +1,6 @@
 % ---
 % Sadeli's Resume
-% August 2021
+% July 2023
 % ---
 
 \documentclass{article}
@@ -8,27 +8,29 @@
 % ---
 % Fancy resume formatting
 % ---
-\usepackage{titling}		        % Title formatting
-\usepackage{titlesec}		        % Section formatting
-\usepackage{fontawesome}	        % Icons
-\usepackage{enumitem}		        % Remove \item spacing
-\usepackage{censor}
+\usepackage{titling}		            % Title formatting
+\usepackage{titlesec}		            % Section formatting
+\usepackage{fontawesome}	          % Icons
+\usepackage{enumitem}		            % Remove \item spacing
+\usepackage{hyperref}		            % Clickable hyperlinks
+\usepackage{bookmark}               % Get rid of bookmark warnings
 \usepackage[margin=0.5in]{geometry}	% Don't make the page so small
 
 \pagenumbering{gobble}  % Remove page numbering
+\setlist[itemize]{noitemsep, topsep=0pt}
 
 % Title formatting
 \renewcommand{\maketitle}{
-	\begin{center}
-	{\Large \theauthor} % Large name
-	{\vspace{0.1in}}	% Small gap
+  \begin{center}
+  {\Large \theauthor}
+  {\vspace{0.1in}}
 
-	% Add contact info here
-    \faEnvelopeO \ \censor{sadeli413@github.com} \hspace{.2in} \faMobile \ \censor{(123) 456-7890} \hspace{.2in} \faGithubSquare \ https://github.com/sadeli413 \hspace{.2in} \faLinkedinSquare \ \censor{sadeli413-linkedin} \hspace{.2in}
-	\end{center} 
+  % Add contact info here
+  \faEnvelopeO \ \href{mailto:redacted@redacted.com}{redacted@redacted.com} \hspace{.2in} \faMobile \ (123) 456-7890 \hspace{.2in} \faGithubSquare \ \url{https://github.com/sadeli413} \hspace{.2in} \faLinkedinSquare \ \href{https://www.linkedin.com}{redacted-linkedin} \hspace{.2in}
+  \end{center} 
 }
 
-% sSection formatting
+% Section Formatting
 \titleformat{\section}
 {\large \uppercase}{}{0em}{}[\titlerule] % horizontal line
 
@@ -49,11 +51,11 @@
 {}{}{0em}{}
 
 \titlespacing{\subsubsection}
-{0em}{0em}{0em} % no space
+{0em}{0em}{0em}
 
 % item formatting
 \titlespacing{\item}
-{0em}{0em}{0em} % no space
+{0em}{0em}{0em}
 
 % ---
 % Resume starts here
@@ -69,79 +71,88 @@
 \section{About Me}
 
 \subsection{Technical Skills}
-\begin{itemize}[noitemsep, topsep=0pt]
-	\item Kali Linux/ParrotOS, Amazon Web Services, Nmap, Wireshark, Metasploit, Gobuster, VMware/VBox, Burp Suite
+\begin{itemize}
+	\item Docker, Ghidra, Ida Pro, Wireshark, GDB, LLDB, Pwntools, Kali Linux, Sliver, Nmap, Ffuf, Vmware, Burp Suite
 \end{itemize}
-
-\subsection{Other}
-\begin{itemize}[noitemsep, topsep=0pt]
-	\item Python, C/C++, Bash, Computer networking and services, Cyber Security, Ansible, Docker.
+\subsection{Programming Languages}
+\begin{itemize}
+  \item Rust, Python, Go, Bash, C, x86 Assembly, ARM Assembly
 \end{itemize}
 
 % Work Experience
 \section{Work Experience}
 
+\resumesubsection{Battelle Memorial Institute}{May 2023 - Present}
+\subsubsection{Reverse Engineer and Vulnerability Researcher}
+\begin{itemize}
+  \item Utilized static analysis and dynamic analysis tools to reverse engineer embedded devices and communication protocols.
+  \item Engineered fuzzing harnesses to discover weaknesses and developed exploitation scripts to target vulnerable devices.
+\end{itemize}
+
+\resumesubsection{Lawrence Livermore National Laboratory}{May 2022 - May 2023}
+\subsubsection{Cyber Security Intern | Cyber Testing for Resilient Industrial Control Systems}
+\begin{itemize}
+  \item Scripted Ghidra in Python to detect supply-chain components in firmware for industrial control systems.
+  \item Utilized machine learning techniques such as random forests and clustering to compute similarities between binaries.
+\end{itemize}
+
 \resumesubsection{Honeywell Global Security}{May 2021 - August 2021}
-\subsubsection{Cyber Security Intern - Vulnerability Management Team}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Performed vulnerability audits for over 300,000 assets including 927 web applications and consulted with departments to remediate vulnerabilities.
-    \item Designed and deployed several multithreaded python scripts to automate vulnerability scanning tools Rapid7 InsightVM and Qualys Web Application Scanner.
-    \item Automated the collection and processing of vulnerability scan data to generate client readable reports.
-    \item Analyzed and detected false positive vulnerability scans using BurpSuite.
-    \item Drafted, revised, and published runbooks, work instructions, and documentation for clients.
+\subsubsection{Cyber Security Intern | Vulnerability Management Team}
+\begin{itemize}
+  \item Performed vulnerability audits for over 300,000 assets including over 900 web applications and consulted internal development teams to remediate vulnerabilities.
+  \item Automated the generation of client-readable reports from Rapid7 InsightVM and Qualys WAS vulnerability scan data.
 \end{itemize}
 
 \resumesubsection{ASU Research Enterprise}{November 2020 - May 2021}
-\subsubsection{Student Developer}
-\begin{itemize}[noitemsep, topsep=0pt]
-    \item Designed an IoT and Electronic Warfare hacking course and trained over 20 ROTC students and US veterans.
-    \item Designed a Red/Blue team competetion environment with Amazon Web Services and Docker for 100 ROTC students and US veterans.
-    \item Demonstrated a Radio Replay Attack to unlock a car, rooted a drone, and performed WIFI attacks.
-    \item Demonstrated hardware hacking and firmware analysis on various IoT devices including security cameras and routers.
+\subsubsection{Student Developer | Research Consultant}
+\begin{itemize}
+  \item Designed and deployed an IoT hacking and cybersecurity course and trained over 20 US veterans and Navy ROTC students.
+  \item Demonstrated drone hacking, radio replay attacks, WIFI attacks, hardware hacking, and firmware exploitation.
 \end{itemize}
-
 
 % Education
 \section{Education}
 
 \resumesubsection{Arizona State University}{August 2019 - May 2023}
-\subsubsection{B.S. Computer Science (Cyber Security) | GPA: 3.93}
-\begin{itemize}[noitemsep, topsep=0pt]
-	\item Barrett, The Honors College
+\begin{itemize}
+  \item B.S. Computer Science | GPA: 3.96
 \end{itemize}
 
 \subsection{Certifications}
-\begin{itemize}[noitemsep, topsep=0pt]
+\begin{itemize}
     \item CompTIA A+ (2020)
     \item CompTIA Network+ (2021)
 \end{itemize}
 
-% Co-Curriculars
-\section{Co-Curricular Activities}
-
-\resumesubsection{DevilSec}{August 2019 - Present}
-\subsubsection{Secretary}
-\begin{itemize}[noitemsep, topsep=0pt] 
-	\item ASU's red team cybersecurity club specialized in ethical hacking, penetration testing, and network security.
-\end{itemize}
-\begin{itemize}[noitemsep, topsep=0pt]
-	\item Organize club archives, schedule weekly club meetings, and communicate meeting details to other members and peers.
-	\item Lead club activities, give lectures, and deploy hacking labs for over 300 club members.
-\end{itemize}
-
-\resumesubsection{Western Regional Collegiate Cyber Defense Competition}{January 2021 - Present}
-\subsubsection{Blue Team Member}
-\begin{itemize}[noitemsep, topsep=0pt]
-	\item ASU's blue team for the 2021 season.
-	\item Hardened Linux machines, patched misconfigured services, completed competition injects, and particapated in incident response to isolate cyber threats.
-\end{itemize}
+% Other Activities
+\section{Activities}
 
 \resumesubsection{Hack The Box}{August 2019 - Present}
-\subsubsection{Penetration Tester}
-\begin{itemize}[noitemsep, topsep=0pt]
-	\item An online platform with penetration testing labs and CTFs to practice hacking and advance skills in cybersecurity.
-    \item Global ranking \#765
-	\item \faCube \ https://www.hackthebox.eu/profile/171856
+\subsubsection{Rank: Hacker}
+\begin{itemize}
+  \item Played CTFs to learn web app reconnaissance and exploitation, privilege escalation techniques, and offensive tooling.
+  \item \faCube \ \url{https://www.hackthebox.eu/profile/171856}{}
+\end{itemize}
+
+\resumesubsection{Pwn College}{August 2022 - Present}
+\subsubsection{Rank: Yellow Belt}
+\begin{itemize}
+  \item Played CTFs to learn binary exploitation techniques such as ROP, JIT spraying, and sandbox escapes.
+  \item \url{https://pwn.college/hacker/233}
+\end{itemize}
+
+\resumesubsection{Western Regional Collegiate Cyber Defense Competition}{January 2021 - April 2023}
+\subsubsection{Blue Team Member}
+\begin{itemize}
+	\item Hardened Linux machines, patched misconfigured services, and participated in incident response to isolate cyber threats.
+  \item Represented ASU and placed 3rd in the 2022 and 2023 Western Regional competitions.
+\end{itemize}
+
+\resumesubsection{DevilSec}{August 2019 - May 2023}
+\subsubsection{Officer | Secretary}
+\begin{itemize} 
+	\item Gave talks on red team methodologies, penetration testing tools, and network security.
+  \item Developed and deployed Hack The Box-style CTF challenges for club members in a Docker environment on AWS.
 \end{itemize}
 
 \end{document}
